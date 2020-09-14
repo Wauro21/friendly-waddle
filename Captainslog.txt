@@ -5,3 +5,8 @@ Some thoughts:
 	-- The board, could contain the boxes as an ArrayList, would make traverse it very simple, as a roll of the dice could just mean moving indexes.
 
 -I should be great if we can add more type of boxes as needed as well as new and interesting mechanics without having to directly tinker with the board, this should just accept the changes.
+
+14/09/2020
+	ADDED:
+		-Places class, to be in charge of creating an object according to a game pulled from the database
+		-Misc directory, with Const.java managing all the constants used in the game
