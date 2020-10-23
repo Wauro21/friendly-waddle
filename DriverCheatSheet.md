@@ -10,9 +10,13 @@
 		SELECT column1, column2, ..., columnN FROM tableName WHERE condition
 ```
 To retrieve all the columns in the table, can be done by using:
-			SELECT * FROM tableName
+```
+		SELECT * FROM tableName
+```
 -**WHERE clauses:**  Criteria for selecting value.
+```
 		... WHERE condition
+```
 	**Conditions:**
 	- **LIKE** - Used to compare strings, wild cards can be used:
 		1. `KeyWord%` will search for any row that matches the pattern plus zero or more characters at the end.
