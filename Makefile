@@ -1,8 +1,9 @@
 FLAGS = -g
 JC 		= javac
-jvm		= java
+JVM		= java
+CPTH 	= -classpath .:driver/sqlite-jdbc-3.32.3.2.jar
 
-
+TEST	= Testfile
 
 .SUFFIXES: .java .class
 
@@ -10,13 +11,19 @@ jvm		= java
 	$(JC) $(FLAGS) $*.java
 CLASSES = \
 	Testfile.java \
-	tableboard/*.java
+	tableboard/*.java \
+	bd/*.java
 
 
 default: build #Calls the compiler routine
 
 build: $(CLASSES:.java=.class)
 
+test:
+	$(JVM) $(CPTH) $(TEST)
+
 clean:
 	rm *.class
 	rm tableboard/*.class
+	rm bd/*.class
+	rm misc/*.class
