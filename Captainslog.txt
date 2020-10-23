@@ -10,3 +10,7 @@ Some thoughts:
 	ADDED:
 		-Places class, to be in charge of creating an object according to a game pulled from the database
 		-Misc directory, with Const.java managing all the constants used in the game
+
+22/10/2020
+		-All rules about the game, should be handled by tables in a sqlite DB, games can be easily added or modified without changing the source code, for example, loading a game would immply looking for some parameters in a table of the main database.
+		-The driver to interact with the DB is JDBC
