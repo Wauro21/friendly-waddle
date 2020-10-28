@@ -8,13 +8,19 @@ def connect(nameDB):
         link = sqlite3.connect(nameDB)
         return link
     else:
-        response = input("El archivo BD no existe, desea crearlo Y/N?")
+        response = input("El archivo BD no existe, desea crearlo Y/N? ")
         if((response.lower()) == "y"):
-            link = sqlite3.connect(nameDB+".db")
+            link = sqlite3.connect(nameDB)
             print("BD creada y conexion establecida!")
             return link
         else:
             return None
+
+def listTables(link):
+    cursor = link.cursor()
+    cursor.execute('SELECT name from sqlite_master where type= "table"')
+    print(cursor.fetchall())
 # - Inicio
 nameDB = input("Ingrese el nombre de la base de datos, sin extension: ")
-connect(nameDB)
+nexo = connect(nameDB)
+listTables(nexo)
