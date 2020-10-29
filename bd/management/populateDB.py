@@ -19,7 +19,24 @@ def connect(nameDB):
 def listTables(link):
     cursor = link.cursor()
     cursor.execute('SELECT name from sqlite_master where type= "table"')
-    print(cursor.fetchall())
+    result = cursor.fetchall()
+    size = len(result)
+    if(size <= 1):
+        print("¡No hay tablas presentes!")
+    else:
+        result = tableFetch2Array(result)
+        for toPrint in result:
+            print(toPrint)
+
+def tableFetch2Array(result):
+    #Removes the sqlite_sequence
+    retorno = set()
+    for i in range(len(result)):
+        temp = result[i][0]
+        if(temp != result[-1][0]):
+            retorno.add(temp)
+    return retorno
+
 # - Inicio
 nameDB = input("Ingrese el nombre de la base de datos, sin extension: ")
 nexo = connect(nameDB)
