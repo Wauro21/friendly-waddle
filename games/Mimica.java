@@ -1,3 +1,3 @@
-public class Mimica{
-	
+public class Mimica extends Gamebase{
+
 }
