@@ -12,7 +12,8 @@ TEST	= Testfile
 CLASSES = \
 	Testfile.java \
 	tableboard/*.java \
-	bd/*.java
+	bd/*.java \
+	games/*.java
 
 
 default: build #Calls the compiler routine
@@ -27,3 +28,4 @@ clean:
 	rm tableboard/*.class
 	rm bd/*.class
 	rm misc/*.class
+	rm games/*.class
