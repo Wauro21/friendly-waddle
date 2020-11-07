@@ -6,6 +6,8 @@ import java.util.TimerTask;
 //Api
 import bd.Api;
 
+import misc.Consts;
+
 public abstract class Gamebase{
 	public String name;
 	public float roundPoints;
@@ -31,7 +33,7 @@ public abstract class Gamebase{
 	//METODOS
 	// - TimeRound: Performs a timed routine,waits for user input
 	public float timedRound(){
-		Timer timer = new Timer(); //AS daemon
+		Timer timer = new Timer();
 		TimerTask task = new TimerTask(){
 			@Override
 			public void run(){
@@ -40,12 +42,12 @@ public abstract class Gamebase{
 			}
 		};
 
-		timer.schedule(task, 1000, 5000);
+		timer.schedule(task, 1000, Consts.timerTic);
 		return 0.0f;
 	}
 
 	// - timedRoutine: the rutine to be called, @overriden
 	public void timedRoutine(){
-		System.out.println("DEBUG");
+		System.out.println("DEBUG"+ this.name);
 	}
 }

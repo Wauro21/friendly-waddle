@@ -54,12 +54,11 @@ public class Api {
 		}
 	}
 
-	// READ FROM ID
-
-
-
-
 	private static String locationString(String dbName){
 		return Consts.pathDB+dbName+".db";
 	}
+
+
+	// GET STATUS FROM MAIN TABLE
+	
 }

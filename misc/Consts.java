@@ -12,6 +12,7 @@ public final class Consts{
 	public static String bdName = "test"; // Temp-name
 
 	// -Games Default values:
+	public static int timerTic = 5000; // Temp - time 
 
 
 }
